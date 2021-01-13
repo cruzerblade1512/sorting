@@ -8,6 +8,8 @@ void mergeAlgo(int arr[],int l,int mid,int h)
     i = l;
     j = mid+1;
     k=l;
+    //COMPARE TWO LIST
+    
     while(i<=mid && j<=h)
     {
         if(arr[i] <= arr[j])
@@ -23,14 +25,17 @@ void mergeAlgo(int arr[],int l,int mid,int h)
         }
         k++;
     }
+    //COPY REMAINING ELEMENT IF ANY
    for(;i<=mid;i++)
    {
        b[k++] = arr[i];
    }
+    //COPY REMAINING ELEMENTS IF ANY
    for(;j<=h;j++)
    {
        b[k++] = arr[j];
    }
+    //COPY ALL THE SORTED  ELEMENT BACK TO ARRAY ARR
     for(int i=l;i<=h;i++)
     {
         arr[i] = b[i];
